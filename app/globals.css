@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Barlow+Condensed:wght@500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-barlow: 'Barlow', system-ui, sans-serif;
+  --font-barlow-condensed: 'Barlow Condensed', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-barlow);
+  background-color: #f5f5f7;
+  color: #021b3b;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-orange text-white px-6 py-3 font-semibold uppercase tracking-wider text-sm hover:bg-orange-dark transition-all duration-200 inline-block;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-white text-white px-6 py-3 font-semibold uppercase tracking-wider text-sm hover:bg-white hover:text-navy transition-all duration-200 inline-block;
+  }
+
+  .section-eyebrow {
+    @apply text-orange uppercase tracking-[0.2em] font-semibold text-sm mb-3;
+  }
+
+  .section-title {
+    @apply font-display text-4xl md:text-5xl font-bold text-navy leading-tight;
+  }
+
+  .rink-bg {
+    background-image: 
+      linear-gradient(135deg, rgba(2,27,59,0.93) 0%, rgba(13,34,71,0.88) 100%),
+      url('https://images.unsplash.com/photo-1580748141549-71748dbe0bdc?w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .card-navy {
+    @apply bg-navy border border-navy-light rounded-sm p-6;
+  }
+
+  .card-light {
+    @apply bg-white border border-gray-100 rounded-sm p-6 shadow-sm;
+  }
+}
+
+/* Animated underline on nav links */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #f36b21;
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Orange accent bar before section headers */
+.accent-bar {
+  display: inline-block;
+  width: 40px;
+  height: 3px;
+  background: #f36b21;
+  margin-bottom: 16px;
+}
+
+/* Diagonal clip hero */
+.hero-clip {
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+}
+
+/* Orange strip */
+.orange-strip {
+  background: linear-gradient(90deg, #f36b21 0%, #d45a15 100%);
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+.fade-in-delay-1 { animation-delay: 0.15s; opacity: 0; }
+.fade-in-delay-2 { animation-delay: 0.3s; opacity: 0; }
+.fade-in-delay-3 { animation-delay: 0.45s; opacity: 0; }

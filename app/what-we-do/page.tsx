@@ -1,5 +1,6 @@
 // What We Do page
-import Link from 'next/link';
+
+import Card from '@/components/Card';
 import CtaBanner from '@/components/CtaBanner';
 
 export default function WhatWeDoPage() {
@@ -48,19 +49,19 @@ export default function WhatWeDoPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-navy rounded-sm p-8 border-l-4 border-orange">
-              <p className="text-orange text-xs uppercase tracking-widest font-semibold mb-3">01 · Junior A Hockey Leagues</p>
-              <p className="text-white/80 text-base leading-relaxed">
-                We partner with Canadian Junior A leagues that operate multiple teams across defined regions and require a professional, centralized approach to sponsorship strategy and execution.
-              </p>
-            </div>
-            <div className="bg-navy rounded-sm p-8 border-l-4 border-orange">
-              <p className="text-orange text-xs uppercase tracking-widest font-semibold mb-3">02 · Large Minor Hockey Associations</p>
-              <p className="text-white/80 text-base leading-relaxed">
-                We work with well-run minor hockey associations that deliver high-frequency participation, strong family engagement, and meaningful community reach — but lack the scale to attract larger corporate partners independently.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card
+              number="01"
+              title="Junior A Hockey Leagues"
+              description="We partner with Canadian Junior A leagues that operate multiple teams across defined regions and require a professional, centralized approach to sponsorship strategy and execution."
+              variant="navy"
+            />
+            <Card
+              number="02"
+              title="Large Minor Hockey Associations"
+              description="We work with well-run minor hockey associations that deliver high-frequency participation, strong family engagement, and meaningful community reach — but lack the scale to attract larger corporate partners independently."
+              variant="navy"
+            />
           </div>
         </div>
       </section>

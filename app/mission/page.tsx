@@ -1,5 +1,6 @@
 // Our Mission page
-import Link from 'next/link';
+
+import Card from '@/components/Card';
 import CtaBanner from '@/components/CtaBanner';
 
 export default function MissionPage() {
@@ -52,19 +53,19 @@ export default function MissionPage() {
           </div>
 
           {/* 2-column mission content */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <div className="bg-navy rounded-sm p-8 border-l-4 border-orange">
-              <p className="text-orange text-xs uppercase tracking-widest font-semibold mb-3">01 · Aggregation</p>
-              <p className="text-white/80 text-base leading-relaxed">
-                By aggregating leagues and associations under a centralized commercial structure, VSG simplifies sponsor engagement, enforces governance, and delivers sustainable commercial outcomes for the organizations that support the game.
-              </p>
-            </div>
-            <div className="bg-navy rounded-sm p-8 border-l-4 border-orange">
-              <p className="text-orange text-xs uppercase tracking-widest font-semibold mb-3">02 · Preservation</p>
-              <p className="text-white/80 text-base leading-relaxed">
-                Our mission is not to replace local hockey identity — but to organize it commercially, creating a unified, investable ecosystem that benefits sponsors, leagues, associations, and communities alike.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <Card
+              number="01"
+              title="Aggregation"
+              description="By aggregating leagues and associations under a centralized commercial structure, VSG simplifies sponsor engagement, enforces governance, and delivers sustainable commercial outcomes for the organizations that support the game."
+              variant="navy"
+            />
+            <Card
+              number="02"
+              title="Preservation"
+              description="Our mission is not to replace local hockey identity — but to organize it commercially, creating a unified, investable ecosystem that benefits sponsors, leagues, associations, and communities alike."
+              variant="navy"
+            />
           </div>
         </div>
       </section>

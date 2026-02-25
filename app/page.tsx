@@ -67,18 +67,26 @@ export default function HomePage() {
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
-            <div className="section-eyebrow fade-in">A Purpose-Built Platform</div>
-            <div className="accent-bar" />
+            {/* hero eyebrow removed per request */}
             <h1 className="font-display font-black text-6xl md:text-8xl text-white uppercase leading-none tracking-tight mb-6 fade-in fade-in-delay-1">
               Building the<br />
               Commercial<br />
               <span className="text-orange">Infrastructure</span><br />
               for Canadian Hockey
             </h1>
-            <p className="text-white/70 text-lg md:text-xl max-w-2xl leading-relaxed mb-10 fade-in fade-in-delay-2">
-              Villani Sports Group is a Canadian sports-commercial platform built to organize and scale corporate sponsorship across Junior A hockey leagues and large minor hockey associations. Canadian hockey delivers one of the country's largest participation audiences — yet sponsorship remains fragmented, sold locally, and governed unevenly. VSG solves this by aggregating leagues into centralized, sponsor-ready platforms with standardized categories, unified pricing, and centralized execution.
-            </p>
-            <div className="flex flex-wrap gap-4 fade-in fade-in-delay-3">
+            <div className="text-white/70 text-lg max-w-2xl mb-10 fade-in fade-in-delay-2 space-y-3">
+              {[
+                'VSG is a Canadian sports-commercial platform built to organize and scale corporate sponsorship across Junior A hockey leagues and large minor hockey associations',
+                'Canadian hockey delivers one of the country\'s largest participation audiences — yet sponsorship remains fragmented, sold locally, and governed unevenly',
+                'VSG solves this by aggregating leagues into centralized, sponsor-ready platforms with standardized categories, unified pricing, and centralized execution',
+              ].map((point, idx) => (
+                <div key={idx} className="flex gap-3 items-start">
+                  <span className="text-orange font-bold text-xl flex-shrink-0 mt-1">›</span>
+                  <p className="leading-relaxed">{point}</p>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-4 fade-in fade-in-delay-3 mb-6">
               <Link href="/mission" className="btn-primary px-8 py-4 text-sm">
                 Learn Our Mission
               </Link>
@@ -86,6 +94,9 @@ export default function HomePage() {
                 What We Do
               </Link>
             </div>
+            <p className="text-white font-display font-black text-xl uppercase tracking-wide fade-in fade-in-delay-3">
+              Focused<span className="text-orange">.</span> Governed<span className="text-orange">.</span> Built to Scale<span className="text-orange">.</span>
+            </p>
           </div>
         </div>
 
@@ -171,82 +182,61 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* WHY AGGREGATION WORKS */}
-      <section className="rink-bg py-24">
+      {/* CORE MESSAGES */}
+      <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <div className="section-eyebrow">Why Aggregation Works</div>
+          <div className="text-center mb-16">
+            <div className="section-eyebrow">Our Purpose & Offer</div>
             <div className="accent-bar mx-auto" />
-            <h2 className="font-display font-black text-4xl md:text-6xl text-white uppercase leading-none">
-              League & Association Value
-            </h2>
-            <p className="text-white/60 text-base max-w-2xl mx-auto mt-4">
-              Aggregation delivers structural benefits that individual teams cannot achieve alone.
+            <h2 className="section-title mb-4">What Drives VSG</h2>
+            <p className="text-gray-500 text-base max-w-3xl mx-auto leading-relaxed">
+              Mission, services, and operating philosophy all fuel a single goal – to make Canadian hockey sponsor-ready at scale.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {aggregationBenefits.map((benefit) => (
-              <div
-                key={benefit.title}
-                className="bg-navy/80 border border-orange/30 hover:border-orange rounded-sm p-6 flex flex-col gap-3 transition-all duration-200 group"
-              >
-                <div className="w-1 h-8 bg-orange" />
-                <h3 className="font-display font-bold text-base text-white leading-tight uppercase group-hover:text-orange transition-colors">
-                  {benefit.title}
-                </h3>
-                <p className="text-white/60 text-xs leading-relaxed">
-                  {benefit.description}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-10 py-5 px-8 bg-navy/60 border-l-4 border-orange rounded-sm">
-            <p className="text-white/80 text-sm italic">
-              <strong className="text-orange not-italic uppercase tracking-wide text-xs">The Net Effect — </strong>
-              Leagues & associations gain commercial scale without adding staff or changing hockey operations.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* WHAT SPONSORS ARE DEMANDING */}
-      <section className="py-24 bg-slate-custom">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <div className="section-eyebrow">How the Market Has Changed</div>
-            <div className="accent-bar mx-auto" />
-            <h2 className="section-title mb-4">What Sponsors Are Demanding Today</h2>
-            <p className="text-gray-500 max-w-2xl mx-auto text-base">
-              Corporate partners now expect professional, platform-level programs — not fragmented team-by-team relationships.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {sponsorDemands.map((item, i) => (
-              <div
-                key={item.title}
-                className="bg-white rounded-sm p-7 border border-gray-100 hover:border-orange/50 shadow-sm hover:shadow-md transition-all duration-200 flex gap-5"
-              >
-                <div className="w-10 h-10 rounded-full bg-navy flex items-center justify-center text-orange font-display font-black text-lg flex-shrink-0 mt-1">
-                  {i + 1}
-                </div>
-                <div>
-                  <h3 className="font-display font-bold text-lg text-navy uppercase leading-tight mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-10 bg-navy rounded-sm p-6 text-center">
-            <p className="text-xs text-orange uppercase tracking-widest font-semibold mb-1">The Shift</p>
-            <p className="text-white text-base italic">
-              Sponsors are moving away from fragmented team-level programs toward governed, scalable platforms.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Link
+              href="/mission"
+              className="block bg-navy rounded-sm p-8 border border-orange/20 hover:border-orange transition-all duration-200 group"
+            >
+              <h3 className="font-display font-bold text-white uppercase text-xl mb-3">
+                Our Mission
+              </h3>
+              <p className="text-white/70 text-sm leading-relaxed">
+                Organize Canadian hockey into sponsor‑ready platforms that support long‑term corporate investment.
+              </p>
+              <span className="mt-4 inline-block text-orange font-semibold group-hover:underline">
+                Learn more →
+              </span>
+            </Link>
+            <Link
+              href="/what-we-do"
+              className="block bg-navy rounded-sm p-8 border border-orange/20 hover:border-orange transition-all duration-200 group"
+            >
+              <h3 className="font-display font-bold text-white uppercase text-xl mb-3">
+                What We Do
+              </h3>
+              <p className="text-white/70 text-sm leading-relaxed">
+                We sell, govern, and execute sponsorships so leagues can focus on the game.
+              </p>
+              <span className="mt-4 inline-block text-orange font-semibold group-hover:underline">
+                Learn more →
+              </span>
+            </Link>
+            <Link
+              href="/why-vsg"
+              className="block bg-navy rounded-sm p-8 border border-orange/20 hover:border-orange transition-all duration-200 group"
+            >
+              <h3 className="font-display font-bold text-white uppercase text-xl mb-3">
+                Why VSG?
+              </h3>
+              <p className="text-white/70 text-sm leading-relaxed">
+                A purpose‑built commercial platform with centralized, disciplined, scalable execution.
+              </p>
+              <span className="mt-4 inline-block text-orange font-semibold group-hover:underline">
+                Learn more →
+              </span>
+            </Link>
           </div>
         </div>
       </section>

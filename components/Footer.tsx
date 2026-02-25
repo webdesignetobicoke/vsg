@@ -1,11 +1,12 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const links = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'About VSG' },
-  { href: '/solution', label: 'Solution' },
-  { href: '/sponsors', label: 'Sponsors' },
-  { href: '/leagues', label: 'Leagues & Associations' },
+  { href: '/mission', label: 'Mission' },
+  { href: '/what-we-do', label: 'What We Do' },
+  { href: '/why-vsg', label: 'Why VSG' },
+  { href: '/value-proposition', label: 'Value Proposition' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -17,13 +18,13 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <svg width="36" height="36" viewBox="0 0 100 100" fill="none">
-                <path d="M10 10 L40 70 L70 10 L55 10 L40 45 L25 10 Z" fill="#f36b21"/>
-              </svg>
-              <div>
-                <div className="font-display font-black text-lg text-orange tracking-wide">VILLANI</div>
-                <div className="text-white/50 text-xs uppercase tracking-[0.15em]">Sports Group</div>
-              </div>
+              <Image
+                src="/vsg-logo.png"
+                alt="VSG Logo"
+                width={80}
+                height={80}
+                className="object-contain"
+              />
             </div>
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">
               Aggregated Sponsorship. Centralized Governance. Scalable Revenue.
@@ -39,7 +40,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {links.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-white/60 hover:text-orange text-sm transition-colors uppercase tracking-wide">
+                  <Link href={link.href} className="text-white/60 hover:text-orange text-sm transition-colors uppercase tracking-wide pb-1 border-b-2 border-transparent hover:border-orange">
                     {link.label}
                   </Link>
                 </li>
@@ -53,13 +54,18 @@ export default function Footer() {
             <p className="text-white/60 text-sm mb-4 leading-relaxed">
               Ready to explore a partnership? Start the conversation today.
             </p>
+            <div className="space-y-3 mb-6">
+              <a href="mailto:michael@villanisportsgroup.com" className="text-orange hover:text-orange/80 text-sm font-semibold transition-colors">
+                michael@villanisportsgroup.com
+              </a>
+              <div className="text-white/40 text-xs">
+                <p>Michael Villani, Founder</p>
+                <p>Villani Sports Group</p>
+              </div>
+            </div>
             <Link href="/contact" className="btn-primary text-xs px-5 py-2.5">
               Schedule a Discussion
             </Link>
-            <div className="mt-6 space-y-2">
-              <p className="text-white/40 text-xs">Michael Villani, Founder</p>
-              <p className="text-white/40 text-xs">Villani Sports Group</p>
-            </div>
           </div>
         </div>
 

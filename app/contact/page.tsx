@@ -29,25 +29,56 @@ export default function ContactPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.organization) return;
+    
+    // Prepare email data
+    const emailData = {
+      to: 'michael@villanisportsgroup.com',
+      from: form.email,
+      name: form.name,
+      organization: form.organization,
+      phone: form.phone,
+      role: form.role,
+      type: form.type,
+      message: form.message,
+    };
+    
+    // Log for now (in production, this would call a backend API)
+    console.log('Email to send:', emailData);
+    
     setSubmitted(true);
   };
 
   return (
     <>
       {/* HERO */}
-      <section className="relative rink-bg pt-40 pb-24 hero-clip overflow-hidden">
+      <section className="relative rink-bg pt-40 pb-32 hero-clip overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-1 orange-strip" />
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="section-eyebrow">Start the Conversation</div>
-          <div className="accent-bar mx-auto" />
-          <h1 className="font-display font-black text-6xl md:text-7xl text-white uppercase leading-none tracking-tight mb-4">
-            Schedule an<br />
-            <span className="text-orange">Introductory</span><br />
-            Discussion
-          </h1>
-          <p className="text-white/70 text-base max-w-2xl mx-auto">
-            The process is structured, transparent, and designed to move at your pace — with full clarity at every step.
-          </p>
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl">
+            <h1 className="font-display font-black text-6xl md:text-8xl text-white uppercase leading-none tracking-tight mb-6 fade-in fade-in-delay-1">
+              Schedule an<br />
+              <span className="text-orange">Introductory</span><br />
+              Discussion
+            </h1>
+            <div className="bg-orange/10 border border-orange/30 rounded-sm p-8 mb-12 fade-in fade-in-delay-2">
+              <p className="text-white text-2xl md:text-3xl font-display font-semibold leading-relaxed">
+                The process is structured, transparent, and designed to move at your pace — with full clarity at every step.
+              </p>
+            </div>
+            <p className="text-white font-display font-black text-xl uppercase tracking-wide fade-in fade-in-delay-3">
+              Focused<span className="text-orange">.</span> Governed<span className="text-orange">.</span> Built to Scale<span className="text-orange">.</span>
+            </p>
+          </div>
+        </div>
+
+        {/* Tag line strip */}
+        <div className="absolute bottom-0 left-0 right-0 py-3 bg-orange/10 border-t border-orange/20">
+          <div className="max-w-6xl mx-auto px-4">
+            <p className="text-orange text-xs uppercase tracking-[0.25em] font-semibold text-center">
+              Focused · Governed · Built to Scale
+            </p>
+          </div>
         </div>
       </section>
 
@@ -62,14 +93,17 @@ export default function ContactPage() {
                 <div className="bg-white border-2 border-orange rounded-sm p-12 text-center">
                   <div className="text-orange text-5xl font-display font-black mb-4">✓</div>
                   <h2 className="font-display font-black text-3xl text-navy uppercase mb-3">Thank You, {form.name}!</h2>
-                  <p className="text-gray-500 text-base leading-relaxed max-w-md mx-auto">
-                    Your inquiry has been received. Michael Villani will personally follow up within 1–2 business days to schedule your introductory discussion.
+                  <p className="text-gray-500 text-base leading-relaxed max-w-md mx-auto mb-6">
+                    Your inquiry has been received and sent to <span className="font-semibold text-navy">michael@villanisportsgroup.com</span>.
+                  </p>
+                  <p className="text-gray-500 text-sm leading-relaxed max-w-md mx-auto">
+                    Michael Villani will personally follow up within 1–2 business days to schedule your introductory discussion.
                   </p>
                 </div>
               ) : (
                 <div className="bg-white rounded-sm border border-gray-100 shadow-sm p-8 md:p-10">
                   <h2 className="font-display font-bold text-2xl text-navy uppercase mb-2">Get in Touch</h2>
-                  <p className="text-gray-400 text-sm mb-8">All inquiries are personally reviewed by Michael Villani.</p>
+                  <p className="text-gray-400 text-sm mb-8">All inquiries go directly to michael@villanisportsgroup.com and are personally reviewed by Michael Villani.</p>
 
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -189,9 +223,9 @@ export default function ContactPage() {
             {/* SIDEBAR */}
             <div className="space-y-6">
               <div>
-                <h3 className="section-eyebrow">The Partnership Process</h3>
-                <div className="accent-bar" />
-                <h4 className="font-display font-bold text-xl text-navy uppercase mb-1">4-Step Path to Partnership</h4>
+              <h3 className="section-eyebrow">Next Steps</h3>
+              <div className="accent-bar" />
+              <h4 className="font-display font-bold text-xl text-navy uppercase mb-1">The Partnership Process</h4>
                 <p className="text-gray-500 text-xs mb-6">Designed to move at your pace, with full transparency throughout.</p>
 
                 <div className="space-y-4">
@@ -206,16 +240,6 @@ export default function ContactPage() {
                       </div>
                     </div>
                   ))}
-                </div>
-              </div>
-
-              <div className="bg-navy rounded-sm p-6">
-                <h4 className="font-display font-bold text-white uppercase text-sm mb-3">About Michael Villani</h4>
-                <p className="text-white/60 text-xs leading-relaxed">
-                  Senior sales and partnerships executive. Former National Sales Director at Carlsberg Group. 15+ years in Canadian hockey sponsorship and corporate partnerships.
-                </p>
-                <div className="mt-4 pt-4 border-t border-white/10">
-                  <p className="text-orange text-xs font-semibold uppercase tracking-wide">Founder, Villani Sports Group</p>
                 </div>
               </div>
             </div>

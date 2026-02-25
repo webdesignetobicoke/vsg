@@ -6,10 +6,10 @@ import Image from 'next/image';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'About VSG' },
-  { href: '/solution', label: 'Solution' },
-  { href: '/sponsors', label: 'Sponsors' },
-  { href: '/leagues', label: 'Leagues & Associations' },
+  { href: '/mission', label: 'Our Mission' },
+  { href: '/what-we-do', label: 'What We Do' },
+  { href: '/value-proposition', label: 'Value Proposition' },
+  { href: '/why-vsg', label: 'Why VSG' },
   { href: '/contact', label: 'Contact' },
 ];
 

@@ -184,7 +184,28 @@ export default function SponsorsPage() {
                       </ul>
                     </td>
                     <td className="px-5 py-5 text-gray-500 text-xs align-top border-b border-gray-100">
-                      {cat.examples}
+                      {cat.name === 'Quick Service Restaurants & Family Dining' ? (
+                        <div className="space-y-3">
+                          <div className="grid grid-cols-4 gap-2 mb-3">
+                            {[
+                              { name: 'McDonalds', src: '/logos/restaurants/mcdonald\'s logo.png' },
+                              { name: 'Tim Hortons', src: '/logos/restaurants/tim hortons logo.png' },
+                              { name: 'Subway', src: '/logos/restaurants/subway logo.png' },
+                              { name: 'Pizza Pizza', src: '/logos/restaurants/pizza pizza logo.png' },
+                              { name: 'Harvey\'s', src: '/logos/restaurants/harvey\'s logo.png' },
+                              { name: 'DoorDash', src: '/logos/restaurants/doordash logo.png' },
+                              { name: 'Skip The Dishes', src: '/logos/restaurants/skip the dishes logo.png' },
+                            ].map((logo) => (
+                              <div key={logo.name} className="bg-gray-100 rounded-sm p-1.5 flex items-center justify-center h-12">
+                                <img src={logo.src} alt={logo.name} className="h-8 w-auto object-contain" />
+                              </div>
+                            ))}
+                          </div>
+                          <p className="text-gray-400 text-xs italic">{cat.examples}</p>
+                        </div>
+                      ) : (
+                        cat.examples
+                      )}
                     </td>
                   </tr>
                 ))}

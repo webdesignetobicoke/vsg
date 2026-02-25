@@ -182,64 +182,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CORE MESSAGES */}
-      <section className="py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="section-eyebrow">Our Purpose & Offer</div>
-            <div className="accent-bar mx-auto" />
-            <h2 className="section-title mb-4">What Drives VSG</h2>
-            <p className="text-gray-500 text-base max-w-3xl mx-auto leading-relaxed">
-              Mission, services, and operating philosophy all fuel a single goal – to make Canadian hockey sponsor-ready at scale.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Link
-              href="/mission"
-              className="block bg-navy rounded-sm p-8 border border-orange/20 hover:border-orange transition-all duration-200 group"
-            >
-              <h3 className="font-display font-bold text-white uppercase text-xl mb-3">
-                Our Mission
-              </h3>
-              <p className="text-white/70 text-sm leading-relaxed">
-                Organize Canadian hockey into sponsor‑ready platforms that support long‑term corporate investment.
-              </p>
-              <span className="mt-4 inline-block text-orange font-semibold group-hover:underline">
-                Learn more →
-              </span>
-            </Link>
-            <Link
-              href="/what-we-do"
-              className="block bg-navy rounded-sm p-8 border border-orange/20 hover:border-orange transition-all duration-200 group"
-            >
-              <h3 className="font-display font-bold text-white uppercase text-xl mb-3">
-                What We Do
-              </h3>
-              <p className="text-white/70 text-sm leading-relaxed">
-                We sell, govern, and execute sponsorships so leagues can focus on the game.
-              </p>
-              <span className="mt-4 inline-block text-orange font-semibold group-hover:underline">
-                Learn more →
-              </span>
-            </Link>
-            <Link
-              href="/why-vsg"
-              className="block bg-navy rounded-sm p-8 border border-orange/20 hover:border-orange transition-all duration-200 group"
-            >
-              <h3 className="font-display font-bold text-white uppercase text-xl mb-3">
-                Why VSG?
-              </h3>
-              <p className="text-white/70 text-sm leading-relaxed">
-                A purpose‑built commercial platform with centralized, disciplined, scalable execution.
-              </p>
-              <span className="mt-4 inline-block text-orange font-semibold group-hover:underline">
-                Learn more →
-              </span>
-            </Link>
-          </div>
-        </div>
-      </section>
+      // ...existing code...
 
       {/* CTA */}
       <CtaBanner

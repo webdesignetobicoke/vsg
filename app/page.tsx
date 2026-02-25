@@ -67,22 +67,23 @@ export default function HomePage() {
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
-            <div className="section-eyebrow fade-in">League & Association Partnership Overview</div>
+            <div className="section-eyebrow fade-in">A Purpose-Built Platform</div>
             <div className="accent-bar" />
             <h1 className="font-display font-black text-6xl md:text-8xl text-white uppercase leading-none tracking-tight mb-6 fade-in fade-in-delay-1">
-              Aggregated<br />
-              <span className="text-orange">Sponsorship.</span><br />
-              Scalable Revenue.
+              Building the<br />
+              Commercial<br />
+              <span className="text-orange">Infrastructure</span><br />
+              for Canadian Hockey
             </h1>
             <p className="text-white/70 text-lg md:text-xl max-w-2xl leading-relaxed mb-10 fade-in fade-in-delay-2">
-              Villani Sports Group organizes and aggregates Canadian hockey into centralized, sponsor-ready platforms that enable scalable, long-term corporate investment — while preserving local identity and hockey governance.
+              Villani Sports Group is a Canadian sports-commercial platform built to organize and scale corporate sponsorship across Junior A hockey leagues and large minor hockey associations. Canadian hockey delivers one of the country's largest participation audiences — yet sponsorship remains fragmented, sold locally, and governed unevenly. VSG solves this by aggregating leagues into centralized, sponsor-ready platforms with standardized categories, unified pricing, and centralized execution.
             </p>
             <div className="flex flex-wrap gap-4 fade-in fade-in-delay-3">
-              <Link href="/solution" className="btn-primary px-8 py-4 text-sm">
-                Explore the VSG Solution
+              <Link href="/mission" className="btn-primary px-8 py-4 text-sm">
+                Learn Our Mission
               </Link>
-              <Link href="/leagues" className="btn-outline px-8 py-4 text-sm">
-                For Leagues & Associations
+              <Link href="/what-we-do" className="btn-outline px-8 py-4 text-sm">
+                What We Do
               </Link>
             </div>
           </div>
@@ -92,7 +93,7 @@ export default function HomePage() {
         <div className="absolute bottom-0 left-0 right-0 py-3 bg-orange/10 border-t border-orange/20">
           <div className="max-w-6xl mx-auto px-4">
             <p className="text-orange text-xs uppercase tracking-[0.25em] font-semibold text-center">
-              Aggregated Sponsorship · Centralized Governance · Scalable Revenue
+              Focused · Governed · Built to Scale
             </p>
           </div>
         </div>

@@ -26,10 +26,10 @@ export default function Footer() {
                 className="object-contain"
               />
             </div>
-            <p className="text-white/60 text-sm leading-relaxed max-w-xs">
+            <p className="text-white/60 text-base leading-relaxed max-w-xs">
               Aggregated Sponsorship. Centralized Governance. Scalable Revenue.
             </p>
-            <p className="text-white/40 text-xs mt-4 leading-relaxed">
+            <p className="text-white/40 text-sm mt-4 leading-relaxed">
               Organizing and aggregating Canadian hockey into centralized, sponsor-ready platforms that enable scalable, long-term corporate investment.
             </p>
           </div>
@@ -51,14 +51,14 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h4 className="text-white font-semibold uppercase tracking-widest text-xs mb-5 text-orange">Contact</h4>
-            <p className="text-white/60 text-sm mb-4 leading-relaxed">
+            <p className="text-white/60 text-base mb-4 leading-relaxed">
               Ready to explore a partnership? Start the conversation today.
             </p>
             <div className="space-y-3 mb-6">
-              <a href="mailto:michael@villanisportsgroup.com" className="text-orange hover:text-orange/80 text-sm font-semibold transition-colors">
+              <a href="mailto:michael@villanisportsgroup.com" className="text-orange hover:text-orange/80 text-base font-semibold transition-colors">
                 michael@villanisportsgroup.com
               </a>
-              <div className="text-white/40 text-xs">
+              <div className="text-white/40 text-sm">
                 <p>Michael Villani, Founder</p>
                 <p>Villani Sports Group</p>
               </div>
@@ -73,8 +73,8 @@ export default function Footer() {
           <p className="text-white/30 text-xs">
             © {new Date().getFullYear()} Villani Sports Group. All rights reserved.
           </p>
-          <p className="text-white/20 text-xs uppercase tracking-widest">
-            Aggregated Sponsorship · Centralized Governance · Scalable Revenue
+          <p className="text-white font-display font-black uppercase tracking-widest text-sm">
+            Focused<span className="text-orange">.</span> Governed<span className="text-orange">.</span> Built to Scale<span className="text-orange">.</span>
           </p>
         </div>
       </div>

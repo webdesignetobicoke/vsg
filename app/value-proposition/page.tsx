@@ -1,5 +1,6 @@
 // Value Proposition page
 import Link from 'next/link';
+import ValuePropCard from '@/components/ValuePropCard';
 import CtaBanner from '@/components/CtaBanner';
 
 export default function ValuePropositionPage() {
@@ -25,15 +26,6 @@ export default function ValuePropositionPage() {
             </p>
           </div>
         </div>
-
-        {/* Tag line strip */}
-        <div className="absolute bottom-0 left-0 right-0 py-3 bg-orange/10 border-t border-orange/20">
-          <div className="max-w-6xl mx-auto px-4">
-            <p className="text-orange text-xs uppercase tracking-[0.25em] font-semibold text-center">
-              Focused · Governed · Built to Scale
-            </p>
-          </div>
-        </div>
       </section>
 
       {/* VALUE PROPOSITION SECTIONS */}
@@ -49,94 +41,41 @@ export default function ValuePropositionPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* FOR SPONSORS */}
-            <div className="bg-white rounded-sm overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border-t-4 border-orange">
-              <div className="bg-navy p-8 pb-6">
-                <div className="font-display font-black text-4xl text-orange mb-4">01</div>
-                <h3 className="font-display font-bold text-2xl text-white uppercase mb-2">For Sponsors</h3>
-                <p className="text-orange text-xs font-semibold">Structured market access</p>
-              </div>
-              <div className="p-8 bg-white">
-                <ul className="space-y-3 mb-6">
-                  {[
-                    'Single, governed access to large hockey audiences',
-                    'One agreement replaces dozens of relationships',
-                    'Category exclusivity across leagues',
-                    'Consistent activation & reporting',
-                    'Clear renewal pathways',
-                  ].map((benefit, idx) => (
-                    <li key={idx} className="flex gap-3 items-start">
-                      <span className="text-orange font-bold text-lg flex-shrink-0 mt-0.5">›</span>
-                      <p className="text-gray-700 text-sm leading-relaxed">{benefit}</p>
-                    </li>
-                  ))}
-                </ul>
-                <div className="pt-4 border-t border-gray-200">
-                  <p className="text-orange text-xs italic font-semibold">
-                    "Structured market access."
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* FOR LEAGUES & ASSOCIATIONS */}
-            <div className="bg-white rounded-sm overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border-t-4 border-orange">
-              <div className="bg-navy p-8 pb-6">
-                <div className="font-display font-black text-4xl text-orange mb-4">02</div>
-                <h3 className="font-display font-bold text-2xl text-white uppercase mb-2">For Leagues & Associations</h3>
-                <p className="text-orange text-xs font-semibold">Revenue without overhead</p>
-              </div>
-              <div className="p-8 bg-white">
-                <ul className="space-y-3 mb-6">
-                  {[
-                    'Access to regional & national sponsors',
-                    'Predictable sponsorship revenue',
-                    'Reduced internal resource burden',
-                    'Centralized pricing & governance',
-                    'Local identity preserved',
-                  ].map((benefit, idx) => (
-                    <li key={idx} className="flex gap-3 items-start">
-                      <span className="text-orange font-bold text-lg flex-shrink-0 mt-0.5">›</span>
-                      <p className="text-gray-700 text-sm leading-relaxed">{benefit}</p>
-                    </li>
-                  ))}
-                </ul>
-                <div className="pt-4 border-t border-gray-200">
-                  <p className="text-orange text-xs italic font-semibold">
-                    "Revenue without overhead."
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* FOR THE HOCKEY ECOSYSTEM */}
-            <div className="bg-white rounded-sm overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border-t-4 border-orange">
-              <div className="bg-navy p-8 pb-6">
-                <div className="font-display font-black text-4xl text-orange mb-4">03</div>
-                <h3 className="font-display font-bold text-2xl text-white uppercase mb-2">For the Hockey Ecosystem</h3>
-                <p className="text-orange text-xs font-semibold">Sustainable investment</p>
-              </div>
-              <div className="p-8 bg-white">
-                <ul className="space-y-3">
-                  {[
-                    'Sustainable investment in grassroots hockey',
-                    'Reduced dependency on registration fees',
-                    'Stronger corporate partnerships',
-                    'Improved sponsor trust & execution',
-                  ].map((benefit, idx) => (
-                    <li key={idx} className="flex gap-3 items-start">
-                      <span className="text-orange font-bold text-lg flex-shrink-0 mt-0.5">›</span>
-                      <p className="text-gray-700 text-sm leading-relaxed">{benefit}</p>
-                    </li>
-                  ))}
-                </ul>
-                <div className="pt-4 mt-4 border-t border-gray-200">
-                  <p className="text-orange text-xs italic font-semibold">
-                    "Sustainable investment."
-                  </p>
-                </div>
-              </div>
-            </div>
+            <ValuePropCard
+              number={1}
+              title="For Sponsors"
+              subtitle="Structured market access"
+              benefits={[
+                'Single, governed access to large hockey audiences',
+                'One agreement replaces dozens of relationships',
+                'Category exclusivity across leagues',
+                'Consistent activation & reporting',
+                'Clear renewal pathways',
+              ]}
+            />
+            <ValuePropCard
+              number={2}
+              title="For Leagues & Associations"
+              subtitle="Revenue without overhead"
+              benefits={[
+                'Access to regional & national sponsors',
+                'Predictable sponsorship revenue',
+                'Reduced internal resource burden',
+                'Centralized pricing & governance',
+                'Local identity preserved',
+              ]}
+            />
+            <ValuePropCard
+              number={3}
+              title="For the Hockey Ecosystem"
+              subtitle="Sustainable investment"
+              benefits={[
+                'Sustainable investment in grassroots hockey',
+                'Reduced dependency on registration fees',
+                'Stronger corporate partnerships',
+                'Improved sponsor trust & execution',
+              ]}
+            />
           </div>
         </div>
       </section>

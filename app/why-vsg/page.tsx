@@ -1,6 +1,7 @@
 // Why VSG page
 import Link from 'next/link';
 import Image from 'next/image';
+import ServiceCard from '@/components/ServiceCard';
 import CtaBanner from '@/components/CtaBanner';
 
 export default function WhyVSGPage() {
@@ -23,15 +24,6 @@ export default function WhyVSGPage() {
             </div>
             <p className="text-white font-display font-black text-xl uppercase tracking-wide fade-in fade-in-delay-3">
               Focused<span className="text-orange">.</span> Governed<span className="text-orange">.</span> Built to Scale<span className="text-orange">.</span>
-            </p>
-          </div>
-        </div>
-
-        {/* Tag line strip */}
-        <div className="absolute bottom-0 left-0 right-0 py-3 bg-orange/10 border-t border-orange/20">
-          <div className="max-w-6xl mx-auto px-4">
-            <p className="text-orange text-xs uppercase tracking-[0.25em] font-semibold text-center">
-              Focused · Governed · Built to Scale
             </p>
           </div>
         </div>
@@ -68,17 +60,7 @@ export default function WhyVSGPage() {
                 description: 'Growth driven by aggregation, not complexity',
               },
             ].map((pillar, idx) => (
-              <div key={pillar.title} className="bg-navy rounded-sm p-8 border border-orange/20 hover:border-orange transition-all duration-200 group">
-                <div className="font-display font-black text-4xl text-orange group-hover:scale-110 transition-transform mb-4">
-                  {String(idx + 1).padStart(2, '0')}
-                </div>
-                <h3 className="font-display font-bold text-white uppercase text-base mb-3 leading-tight">
-                  {pillar.title}
-                </h3>
-                <p className="text-white/70 text-sm leading-relaxed">
-                  {pillar.description}
-                </p>
-              </div>
+              <ServiceCard key={pillar.title} number={idx + 1} title={pillar.title} description={pillar.description} />
             ))}
           </div>
         </div>
@@ -97,7 +79,7 @@ export default function WhyVSGPage() {
           </div>
 
           <div className="grid grid-cols-1 gap-0">
-            <div className="flex items-center justify-center bg-navy overflow-hidden h-[600px] md:h-[700px] p-8 md:p-12">
+            <div className="flex items-center justify-center bg-navy overflow-hidden h-[350px] md:h-[700px] p-8 md:p-12">
               <Image 
                 src="/michael villani.png" 
                 alt="Michael Villani" 
@@ -111,15 +93,15 @@ export default function WhyVSGPage() {
               <div>
                 <h3 className="font-display font-bold text-3xl md:text-4xl text-navy mb-8">Michael Villani</h3>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
-                  <div className="border-l-4 border-orange pl-6 space-y-5 text-sm md:text-base text-gray-700 leading-relaxed">
+                  <div className="border-l-4 border-orange pl-6 space-y-5 text-base text-gray-700 leading-relaxed">
                     <p>
                       Michael is a senior sales and partnerships executive with over <span className="font-bold text-navy">15 years of experience</span> building and managing large-scale commercial partnerships, combined with <span className="font-bold text-orange">lifelong involvement in Canadian hockey</span>.
                     </p>
                     <p>
-                      Most recently, Michael served as <span className="font-bold text-navy">National Sales Director at Carlsberg Group</span>, where he led a national sales organization, managed over <span className="font-bold text-orange">$150M in annual revenue</span>, and negotiated multi-year corporate partnerships across retail, hospitality, sports, and entertainment.
+                      Most recently, Michael served as <span className="font-bold text-navy">National Sales Director at Carlsberg Group</span>, where he led a national sales organization and oversaw a broad, multi-market revenue portfolio while negotiating high-value, multi-year corporate partnerships across retail, hospitality, sports, and entertainment.
                     </p>
                   </div>
-                  <div className="border-l-4 border-orange pl-6 space-y-5 text-sm md:text-base text-gray-700 leading-relaxed">
+                  <div className="border-l-4 border-orange pl-6 space-y-5 text-base text-gray-700 leading-relaxed">
                     <p>
                       His background includes league-level partnerships with organizations such as the <span className="font-bold text-navy">Canadian Hockey League, Ontario Hockey League, Memorial Cup, Toronto FC, and Canada Soccer</span> — requiring the same <span className="font-bold text-orange">centralized strategy, pricing discipline, and activation governance</span> that underpin Villani Sports Group.
                     </p>
@@ -129,23 +111,41 @@ export default function WhyVSGPage() {
                   </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="bg-navy rounded-sm p-5 text-white">
-                    <h4 className="font-display font-bold text-base text-orange mb-2">15+ Years</h4>
-                    <p className="text-xs text-white/80 leading-relaxed">
-                      Commercial partnerships expertise across sports, retail, hospitality.
-                    </p>
+                  <div className="group relative bg-navy rounded-sm p-8 text-white hover:shadow-2xl hover:shadow-orange/20 transition-all duration-300 overflow-hidden border border-orange/20 hover:border-orange/50">
+                    {/* Animated background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-orange to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                    
+                    <div className="relative">
+                      <h4 className="font-display font-bold text-2xl text-orange mb-3 group-hover:scale-105 transition-transform duration-300">15+ Years</h4>
+                      <p className="text-base text-white/80 leading-relaxed group-hover:text-white transition-colors duration-300">
+                        National sales & commercial partnership expertise across sports, retail & hospitality.
+                      </p>
+                    </div>
                   </div>
-                  <div className="bg-navy rounded-sm p-5 text-white">
-                    <h4 className="font-display font-bold text-base text-orange mb-2">$150M+</h4>
-                    <p className="text-xs text-white/80 leading-relaxed">
-                      Annual revenue managed at Carlsberg Group.
-                    </p>
+                  <div className="group relative bg-navy rounded-sm p-8 text-white hover:shadow-2xl hover:shadow-orange/20 transition-all duration-300 overflow-hidden border border-orange/20 hover:border-orange/50">
+                    {/* Animated background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-orange to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                    
+                    <div className="relative">
+                      <h4 className="font-display font-bold text-2xl text-orange mb-3 group-hover:scale-105 transition-transform duration-300">Multi-Market Portfolio</h4>
+                      <p className="text-base text-white/80 leading-relaxed group-hover:text-white transition-colors duration-300">
+                        Broad revenue portfolio spanning retail, hospitality, sports, and entertainment.
+                      </p>
+                    </div>
                   </div>
-                  <div className="bg-navy rounded-sm p-5 text-white">
-                    <h4 className="font-display font-bold text-base text-orange mb-2">Hockey First</h4>
-                    <p className="text-xs text-white/80 leading-relaxed">
-                      Former Junior A player, active coach and community advocate.
-                    </p>
+                  <div className="group relative bg-navy rounded-sm p-8 text-white hover:shadow-2xl hover:shadow-orange/20 transition-all duration-300 overflow-hidden border border-orange/20 hover:border-orange/50">
+                    {/* Animated background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-orange to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                    
+                    <div className="relative">
+                      <h4 className="font-display font-bold text-2xl text-orange mb-3 group-hover:scale-105 transition-transform duration-300">Hockey First</h4>
+                      <p className="text-base text-white/80 leading-relaxed group-hover:text-white transition-colors duration-300">
+                        Former Junior A player, active coach and community advocate.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

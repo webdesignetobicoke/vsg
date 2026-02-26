@@ -26,15 +26,6 @@ export default function MissionPage() {
             </p>
           </div>
         </div>
-
-        {/* Tag line strip */}
-        <div className="absolute bottom-0 left-0 right-0 py-3 bg-orange/10 border-t border-orange/20">
-          <div className="max-w-6xl mx-auto px-4">
-            <p className="text-orange text-xs uppercase tracking-[0.25em] font-semibold text-center">
-              Focused · Governed · Built to Scale
-            </p>
-          </div>
-        </div>
       </section>
 
       {/* MISSION CONTENT */}
@@ -59,12 +50,14 @@ export default function MissionPage() {
               title="Aggregation"
               description="By aggregating leagues and associations under a centralized commercial structure, VSG simplifies sponsor engagement, enforces governance, and delivers sustainable commercial outcomes for the organizations that support the game."
               variant="navy"
+              size="lg"
             />
             <Card
               number="02"
               title="Preservation"
               description="Our mission is not to replace local hockey identity — but to organize it commercially, creating a unified, investable ecosystem that benefits sponsors, leagues, associations, and communities alike."
               variant="navy"
+              size="lg"
             />
           </div>
         </div>

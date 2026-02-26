@@ -1,6 +1,7 @@
 // What We Do page
 
 import Card from '@/components/Card';
+import ServiceCard from '@/components/ServiceCard';
 import CtaBanner from '@/components/CtaBanner';
 
 export default function WhatWeDoPage() {
@@ -26,15 +27,6 @@ export default function WhatWeDoPage() {
             </p>
           </div>
         </div>
-
-        {/* Tag line strip */}
-        <div className="absolute bottom-0 left-0 right-0 py-3 bg-orange/10 border-t border-orange/20">
-          <div className="max-w-6xl mx-auto px-4">
-            <p className="text-orange text-xs uppercase tracking-[0.25em] font-semibold text-center">
-              Focused · Governed · Built to Scale
-            </p>
-          </div>
-        </div>
       </section>
 
       {/* WHO WE SERVE */}
@@ -55,12 +47,14 @@ export default function WhatWeDoPage() {
               title="Junior A Hockey Leagues"
               description="We partner with Canadian Junior A leagues that operate multiple teams across defined regions and require a professional, centralized approach to sponsorship strategy and execution."
               variant="navy"
+              size="lg"
             />
             <Card
               number="02"
               title="Large Minor Hockey Associations"
               description="We work with well-run minor hockey associations that deliver high-frequency participation, strong family engagement, and meaningful community reach — but lack the scale to attract larger corporate partners independently."
               variant="navy"
+              size="lg"
             />
           </div>
         </div>
@@ -101,17 +95,7 @@ export default function WhatWeDoPage() {
                 description: 'We prioritize multi-year partnerships and structured renewals, enabling sponsors to scale with the platform over time.',
               },
             ].map((service, idx) => (
-              <div key={service.title} className="bg-navy rounded-sm p-8 border border-orange/20 hover:border-orange transition-all duration-200 group">
-                <div className="font-display font-black text-4xl text-orange group-hover:scale-110 transition-transform mb-4">
-                  {String(idx + 1).padStart(2, '0')}
-                </div>
-                <h3 className="font-display font-bold text-white uppercase text-base mb-3 leading-tight">
-                  {service.title}
-                </h3>
-                <p className="text-white/70 text-sm leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
+              <ServiceCard key={service.title} number={idx + 1} title={service.title} description={service.description} />
             ))}
           </div>
         </div>

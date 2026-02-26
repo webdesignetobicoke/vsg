@@ -71,15 +71,6 @@ export default function ContactPage() {
             </p>
           </div>
         </div>
-
-        {/* Tag line strip */}
-        <div className="absolute bottom-0 left-0 right-0 py-3 bg-orange/10 border-t border-orange/20">
-          <div className="max-w-6xl mx-auto px-4">
-            <p className="text-orange text-xs uppercase tracking-[0.25em] font-semibold text-center">
-              Focused · Governed · Built to Scale
-            </p>
-          </div>
-        </div>
       </section>
 
       {/* FORM + SIDEBAR */}
@@ -103,7 +94,7 @@ export default function ContactPage() {
               ) : (
                 <div className="bg-white rounded-sm border border-gray-100 shadow-sm p-8 md:p-10">
                   <h2 className="font-display font-bold text-2xl text-navy uppercase mb-2">Get in Touch</h2>
-                  <p className="text-gray-400 text-sm mb-8">All inquiries go directly to michael@villanisportsgroup.com and are personally reviewed by Michael Villani.</p>
+                  <p className="text-gray-400 text-base mb-8">All inquiries go directly to <a href="mailto:michael@villanisportsgroup.com" className="text-orange hover:text-orange/80 font-semibold transition-colors duration-300">michael@villanisportsgroup.com</a> and are personally reviewed by Michael Villani.</p>
 
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -225,8 +216,8 @@ export default function ContactPage() {
               <div>
               <h3 className="section-eyebrow">Next Steps</h3>
               <div className="accent-bar" />
-              <h4 className="font-display font-bold text-xl text-navy uppercase mb-1">The Partnership Process</h4>
-                <p className="text-gray-500 text-xs mb-6">Designed to move at your pace, with full transparency throughout.</p>
+              <h4 className="font-display font-bold text-3xl text-navy uppercase mb-1">The Partnership Process</h4>
+                <p className="text-gray-500 text-base mb-6">Designed to move at your pace, with full transparency throughout.</p>
 
                 <div className="space-y-4">
                   {nextSteps.map((step) => (
@@ -235,8 +226,8 @@ export default function ContactPage() {
                         {step.num}
                       </div>
                       <div>
-                        <h5 className="font-display font-bold text-sm text-navy uppercase">{step.title}</h5>
-                        <p className="text-gray-500 text-xs mt-0.5 leading-relaxed">{step.description}</p>
+                        <h5 className="font-display font-bold text-lg text-navy uppercase">{step.title}</h5>
+                        <p className="text-gray-500 text-base mt-0.5 leading-relaxed">{step.description}</p>
                       </div>
                     </div>
                   ))}

@@ -70,7 +70,7 @@ export default function HomePage() {
             {/* hero eyebrow removed per request */}
             <h1 className="font-display font-black text-6xl md:text-8xl text-white uppercase leading-none tracking-tight mb-6 fade-in fade-in-delay-1">
               Building the<br />
-              Commercial<br />
+              <span className="text-orange">Commercial</span><br />
               <span className="text-orange">Infrastructure</span><br />
               for Canadian Hockey
             </h1>
@@ -86,6 +86,9 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
+            <p className="text-white font-display font-black text-xl uppercase tracking-wide fade-in fade-in-delay-3 mb-8">
+              Focused<span className="text-orange">.</span> Governed<span className="text-orange">.</span> Built to Scale<span className="text-orange">.</span>
+            </p>
             <div className="flex flex-wrap gap-4 fade-in fade-in-delay-3 mb-6">
               <Link href="/mission" className="btn-primary px-8 py-4 text-sm">
                 Learn Our Mission
@@ -94,18 +97,6 @@ export default function HomePage() {
                 What We Do
               </Link>
             </div>
-            <p className="text-white font-display font-black text-xl uppercase tracking-wide fade-in fade-in-delay-3">
-              Focused<span className="text-orange">.</span> Governed<span className="text-orange">.</span> Built to Scale<span className="text-orange">.</span>
-            </p>
-          </div>
-        </div>
-
-        {/* Tag line strip */}
-        <div className="absolute bottom-0 left-0 right-0 py-3 bg-orange/10 border-t border-orange/20">
-          <div className="max-w-6xl mx-auto px-4">
-            <p className="text-orange text-xs uppercase tracking-[0.25em] font-semibold text-center">
-              Focused · Governed · Built to Scale
-            </p>
           </div>
         </div>
       </section>
@@ -181,8 +172,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      // ...existing code...
 
       {/* CTA */}
       <CtaBanner

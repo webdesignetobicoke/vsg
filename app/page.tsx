@@ -77,27 +77,38 @@ export default function HomePage() {
             <div className="text-white/70 text-xl max-w-2xl mb-10 fade-in fade-in-delay-2 space-y-3">
               {[
                 {
-                  before: 'VSG is a ',
-                  important: 'Canadian sports-commercial platform',
-                  after: ' manages corporate sponsorship across Junior A hockey leagues and large minor hockey associations.'
+                  parts: [
+                    { text: 'VSG is a ', colored: false },
+                    { text: 'Canadian sports-commercial platform', colored: false },
+                    { text: ' manages corporate sponsorship across ', colored: false },
+                    { text: 'Junior A hockey', colored: true },
+                    { text: ' leagues and ', colored: false },
+                    { text: 'large minor hockey', colored: true },
+                    { text: ' associations.', colored: false },
+                  ]
                 },
                 {
-                  before: 'It streamlines the fragmented local market by ',
-                  important: 'centralizing leagues & associations',
-                  after: '.'
+                  parts: [
+                    { text: 'It streamlines the fragmented local market by ', colored: false },
+                    { text: 'centralizing leagues & associations', colored: true },
+                    { text: '.', colored: false },
+                  ]
                 },
                 {
-                  before: '',
-                  important: 'Standardized pricing and execution',
-                  after: ' make sponsorship scalable nationwide.'
+                  parts: [
+                    { text: 'Standardized pricing and execution', colored: true },
+                    { text: ' make sponsorship scalable nationwide.', colored: false },
+                  ]
                 },
               ].map((point, idx) => (
                 <div key={idx} className="flex gap-3 items-start">
                   <span className="text-orange font-bold text-xl flex-shrink-0 mt-1">›</span>
                   <p className="leading-relaxed">
-                    {point.before}
-                    <span className="text-orange">{point.important}</span>
-                    {point.after}
+                    {point.parts.map((part, partIdx) => (
+                      part.colored ? 
+                        <span key={partIdx} className="text-orange">{part.text}</span> :
+                        <span key={partIdx}>{part.text}</span>
+                    ))}
                   </p>
                 </div>
               ))}

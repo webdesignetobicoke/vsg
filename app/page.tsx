@@ -99,7 +99,7 @@ export default function HomePage() {
                   <span className="text-orange font-bold text-xl flex-shrink-0 mt-1">›</span>
                   <p className="leading-relaxed">
                     {point.before}
-                    <u>{point.underlined}</u>
+                    <u className="text-orange">{point.underlined}</u>
                     {point.after}
                   </p>
                 </div>

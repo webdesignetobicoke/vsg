@@ -76,32 +76,13 @@ export default function HomePage() {
             </h1>
             <div className="text-white/70 text-xl max-w-2xl mb-10 fade-in fade-in-delay-2 space-y-3">
               {[
-                {
-                  full: 'VSG is a Canadian sports-commercial platform built to organize and scale corporate sponsorship across Junior A hockey leagues and large minor hockey associations',
-                  before: 'VSG is a ',
-                  underlined: 'Canadian sports-commercial platform',
-                  after: ' built to organize and scale corporate sponsorship across Junior A hockey leagues and large minor hockey associations'
-                },
-                {
-                  full: 'It streamlines the fragmented local market by centralizing leagues.',
-                  before: 'It streamlines the fragmented local market by ',
-                  underlined: 'centralizing leagues',
-                  after: '.'
-                },
-                {
-                  full: 'Standardized pricing and execution make sponsorship scalable nationwide.',
-                  before: '',
-                  underlined: 'Standardized pricing and execution',
-                  after: ' make sponsorship scalable nationwide.'
-                },
+                'VSG is a Canadian sports-commercial platform built to organize and scale corporate sponsorship across Junior A hockey leagues and large minor hockey associations.',
+                'It streamlines the fragmented local market by centralizing leagues & associations.',
+                'Standardized pricing and execution make sponsorship scalable nationwide.',
               ].map((point, idx) => (
                 <div key={idx} className="flex gap-3 items-start">
                   <span className="text-orange font-bold text-xl flex-shrink-0 mt-1">›</span>
-                  <p className="leading-relaxed">
-                    {point.before}
-                    <u className="text-orange">{point.underlined}</u>
-                    {point.after}
-                  </p>
+                  <p className="leading-relaxed">{point}</p>
                 </div>
               ))}
             </div>

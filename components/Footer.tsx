@@ -73,7 +73,7 @@ export default function Footer() {
           <p className="text-white/30 text-xs">
             © {new Date().getFullYear()} Villani Sports Group. All rights reserved.
           </p>
-          <p className="text-white font-display font-black uppercase tracking-widest text-sm">
+          <p className="text-white font-display font-black uppercase tracking-widest text-xl md:text-2xl">
             Focused<span className="text-orange">.</span> Governed<span className="text-orange">.</span> Built to Scale<span className="text-orange">.</span>
           </p>
         </div>

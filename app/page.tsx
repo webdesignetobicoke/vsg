@@ -80,11 +80,9 @@ export default function HomePage() {
                   parts: [
                     { text: 'VSG is a ', colored: false },
                     { text: 'Canadian sports-commercial platform', colored: false },
-                    { text: ' that manages corporate sponsorship across ', colored: false },
-                    { text: 'Junior A hockey', colored: true },
-                    { text: ' leagues and ', colored: false },
-                    { text: 'large minor hockey', colored: true },
-                    { text: ' associations.', colored: false },
+                    { text: ' that ', colored: false },
+                    { text: 'manages corporate sponsorship', colored: true },
+                    { text: ' across Junior A hockey leagues and large minor hockey associations.', colored: false },
                   ]
                 },
                 {

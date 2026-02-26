@@ -16,9 +16,9 @@ const config: Config = {
           mid: '#0d2247',
         },
         orange: {
-          DEFAULT: '#f36b21',
-          light: '#f58040',
-          dark: '#d45a15',
+          DEFAULT: '#E84A27',
+          light: '#F26347',
+          dark: '#C63A1A',
         },
         slate: {
           custom: '#f5f5f7',

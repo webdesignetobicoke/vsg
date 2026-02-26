@@ -79,7 +79,7 @@ export default function HomePage() {
                 {
                   before: 'VSG is a ',
                   important: 'Canadian sports-commercial platform',
-                  after: ' built to organize and scale corporate sponsorship across Junior A hockey leagues and large minor hockey associations.'
+                  after: ' manages corporate sponsorship across Junior A hockey leagues and large minor hockey associations.'
                 },
                 {
                   before: 'It streamlines the fragmented local market by ',

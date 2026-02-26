@@ -20,7 +20,7 @@ html {
 body {
   font-family: var(--font-barlow);
   background-color: #f5f5f7;
-  color: #0A1C41;
+  color: #071C40;
 }
 
 @layer components {

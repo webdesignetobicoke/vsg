@@ -75,23 +75,23 @@ export default function WhatWeDoPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                title: 'Aggregated Sponsorship Strategy & Sales',
+                title: 'AGGREGATED SPONSORSHIP STRATEGY & SALES',
                 description: 'We design and sell multi-property sponsorship platforms aligned with how regional and national sponsors actually buy.',
               },
               {
-                title: 'Platform & Category Architecture',
+                title: 'PLATFORM & CATEGORY ARCHITECTURE',
                 description: 'We define standardized sponsorship categories, pricing structures, tiered partnership levels, and platform-wide category exclusivity.',
               },
               {
-                title: 'Centralized Sales & Contracting',
+                title: 'CENTRALIZED SALES & CONTRACTING',
                 description: 'VSG leads sponsor outreach, negotiations, contracting, and renewal strategy across the aggregated platform.',
               },
               {
-                title: 'Activation Governance & Reporting',
+                title: 'ACTIVATION GOVERNANCE & REPORTING',
                 description: 'We govern activation standards, coordinate delivery, and provide consistent reporting — ensuring accountability and sponsor confidence.',
               },
               {
-                title: 'Renewal & Platform Expansion Strategy',
+                title: 'RENEWAL & PLATFORM EXPANSION STRATEGY',
                 description: 'We prioritize multi-year partnerships and structured renewals, enabling sponsors to scale with the platform over time.',
               },
             ].map((service, idx) => (

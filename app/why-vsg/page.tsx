@@ -44,19 +44,19 @@ export default function WhyVSGPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                title: 'Centralized',
+                title: 'CENTRALIZED',
                 description: 'One strategy, one pricing framework, one governance structure',
               },
               {
-                title: 'Aligned',
+                title: 'ALIGNED',
                 description: 'Revenue tied directly to sponsor performance and renewal',
               },
               {
-                title: 'Disciplined',
+                title: 'DISCIPLINED',
                 description: 'Expansion gated by results, not ambition',
               },
               {
-                title: 'Scalable',
+                title: 'SCALABLE',
                 description: 'Growth driven by aggregation, not complexity',
               },
             ].map((pillar, idx) => (

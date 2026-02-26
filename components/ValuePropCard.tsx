@@ -11,7 +11,7 @@ export default function ValuePropCard({ number, title, subtitle, benefits }: Val
       {/* Background glow effect */}
       <div className="absolute -inset-1 bg-gradient-to-br from-orange/20 to-transparent opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500 rounded-sm -z-10" />
       
-      <div className="bg-white rounded-sm overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border-t-4 border-orange group-hover:border-orange/80 relative">
+      <div className="bg-white rounded-sm overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border-t-4 border-orange group-hover:border-orange/80 relative h-full flex flex-col">
         {/* Dynamic header section */}
         <div className="relative bg-navy p-8 pb-6 overflow-hidden">
           {/* Animated background overlay */}
@@ -54,8 +54,8 @@ export default function ValuePropCard({ number, title, subtitle, benefits }: Val
         </div>
 
         {/* Benefits section with smooth transitions */}
-        <div className="p-8 bg-white">
-          <ul className="space-y-3">
+        <div className="p-8 bg-white flex-grow flex flex-col">
+          <ul className="space-y-3 flex-grow">
             {benefits.map((benefit, idx) => (
               <li
                 key={idx}

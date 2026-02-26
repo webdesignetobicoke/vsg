@@ -50,14 +50,10 @@ export default function ServiceCard({ number, title, description }: ServiceCardP
           </div>
         </div>
 
-        {/* Title with advanced animation */}
-        <div className="mb-4 flex-shrink-0">
-          <h3 className="font-display font-bold text-white uppercase text-2xl leading-tight tracking-wide relative inline-block">
-            {title}
-            {/* Animated underline */}
-            <div className="absolute -bottom-2 left-0 w-0 h-1 bg-gradient-to-r from-orange via-orange/60 to-transparent group-hover:w-full transition-all duration-700" />
-          </h3>
-        </div>
+        {/* Title with smooth transitions */}
+        <h3 className="font-display font-bold text-2xl text-white mb-3 leading-tight uppercase tracking-wide group-hover:text-orange/90 transition-colors duration-300">
+          {title}
+        </h3>
 
         {/* Description with smooth fade and color transition */}
         <p className="text-white/60 text-base leading-relaxed flex-grow group-hover:text-white/85 transition-all duration-300 group-hover:tracking-wide">

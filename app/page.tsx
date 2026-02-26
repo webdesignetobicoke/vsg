@@ -76,13 +76,29 @@ export default function HomePage() {
             </h1>
             <div className="text-white/70 text-xl max-w-2xl mb-10 fade-in fade-in-delay-2 space-y-3">
               {[
-                'VSG is a Canadian sports-commercial platform built to organize and scale corporate sponsorship across Junior A hockey leagues and large minor hockey associations.',
-                'It streamlines the fragmented local market by centralizing leagues & associations.',
-                'Standardized pricing and execution make sponsorship scalable nationwide.',
+                {
+                  before: 'VSG is a ',
+                  important: 'Canadian sports-commercial platform',
+                  after: ' built to organize and scale corporate sponsorship across Junior A hockey leagues and large minor hockey associations.'
+                },
+                {
+                  before: 'It streamlines the fragmented local market by ',
+                  important: 'centralizing leagues & associations',
+                  after: '.'
+                },
+                {
+                  before: '',
+                  important: 'Standardized pricing and execution',
+                  after: ' make sponsorship scalable nationwide.'
+                },
               ].map((point, idx) => (
                 <div key={idx} className="flex gap-3 items-start">
                   <span className="text-orange font-bold text-xl flex-shrink-0 mt-1">›</span>
-                  <p className="leading-relaxed">{point}</p>
+                  <p className="leading-relaxed">
+                    {point.before}
+                    <span className="text-orange">{point.important}</span>
+                    {point.after}
+                  </p>
                 </div>
               ))}
             </div>

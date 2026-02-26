@@ -74,7 +74,7 @@ export default function HomePage() {
               <span className="text-orange">Infrastructure</span><br />
               for Canadian Hockey
             </h1>
-            <div className="text-white/70 text-xl max-w-2xl mb-10 fade-in fade-in-delay-2 space-y-3">
+            <div className="text-white/70 text-lg max-w-2xl mb-10 fade-in fade-in-delay-2 space-y-3">
               {[
                 {
                   parts: [

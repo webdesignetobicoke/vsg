@@ -12,6 +12,8 @@ const nextSteps = [
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState({
     name: '',
     organization: '',
@@ -26,26 +28,43 @@ export default function ContactPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.organization) return;
     
-    // Prepare email data
-    const emailData = {
-      to: 'michael@villanisportsgroup.com',
-      from: form.email,
-      name: form.name,
-      organization: form.organization,
-      phone: form.phone,
-      role: form.role,
-      type: form.type,
-      message: form.message,
-    };
-    
-    // Log for now (in production, this would call a backend API)
-    console.log('Email to send:', emailData);
-    
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.name,
+          organization: form.organization,
+          email: form.email,
+          phone: form.phone,
+          role: form.role,
+          type: form.type,
+          message: form.message,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred');
+      console.error('Error submitting form:', err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -197,11 +216,18 @@ export default function ContactPage() {
                       />
                     </div>
 
+                    {error && (
+                      <div className="bg-red-50 border border-red-200 rounded-sm p-4 text-red-700 text-sm">
+                        {error}
+                      </div>
+                    )}
+
                     <button
                       type="submit"
-                      className="btn-primary w-full text-center py-4 text-sm"
+                      disabled={loading}
+                      className="btn-primary w-full text-center py-4 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Submit Inquiry
+                      {loading ? 'Sending...' : 'Submit Inquiry'}
                     </button>
                     <p className="text-gray-400 text-xs text-center">
                       No commitment required. All inquiries are responded to within 1–2 business days.

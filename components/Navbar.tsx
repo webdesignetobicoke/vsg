@@ -9,8 +9,8 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/mission', label: 'Mission' },
   { href: '/what-we-do', label: 'What We Do' },
-  { href: '/why-vsg', label: 'Why VSG' },
   { href: '/value-proposition', label: 'Value Proposition' },
+  { href: '/why-vsg', label: 'Why VSG' },
   { href: '/contact', label: 'Contact' },
 ];
 

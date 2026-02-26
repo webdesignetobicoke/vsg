@@ -40,7 +40,7 @@ export default function ValuePropositionPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 [grid-auto-rows:1fr]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 [grid-auto-rows:1fr] items-stretch">
             <ValuePropCard
               number={1}
               title="For Sponsors"

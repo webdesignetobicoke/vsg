@@ -13,7 +13,7 @@ export default function ValuePropCard({ number, title, subtitle, benefits }: Val
       
       <div className="bg-white rounded-sm overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border-t-4 border-orange group-hover:border-orange/80 relative h-full flex flex-col">
         {/* Dynamic header section */}
-        <div className="relative bg-navy p-8 pb-6 overflow-hidden">
+        <div className="relative bg-navy p-8 pb-6 overflow-hidden min-h-[280px]">
           {/* Animated background overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-orange/10 via-transparent to-orange/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           
@@ -31,7 +31,7 @@ export default function ValuePropCard({ number, title, subtitle, benefits }: Val
               </div>
               
               {/* Title with animated underline */}
-              <div className="relative inline-block">
+              <div className="relative inline-block min-h-[80px] flex items-start">
                 <h3 className="font-display font-bold text-3xl text-white uppercase tracking-tight">
                   {title}
                 </h3>

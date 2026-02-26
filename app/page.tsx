@@ -76,9 +76,9 @@ export default function HomePage() {
             </h1>
             <div className="text-white/70 text-lg max-w-2xl mb-10 fade-in fade-in-delay-2 space-y-3">
               {[
-                'VSG is a Canadian sports-commercial platform built to organize and scale corporate sponsorship across Junior A hockey leagues and large minor hockey associations',
-                'Canadian hockey delivers one of the country\'s largest participation audiences — yet sponsorship remains fragmented, sold locally, and governed unevenly',
-                'VSG solves this by aggregating leagues into centralized, sponsor-ready platforms with standardized categories, unified pricing, and centralized execution',
+                'VSG is a Canadian sports platform for corporate sponsorship across Junior A and minor hockey.',
+                'It streamlines the fragmented local market by centralizing leagues.',
+                'Standardized pricing and execution make sponsorship scalable nationwide.',
               ].map((point, idx) => (
                 <div key={idx} className="flex gap-3 items-start">
                   <span className="text-orange font-bold text-xl flex-shrink-0 mt-1">›</span>

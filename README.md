@@ -17,8 +17,8 @@ A modern, responsive marketing website built with **Next.js 14 + TypeScript + Ta
 - Google Fonts: Barlow + Barlow Condensed
 
 ## Brand Colors
-- **Navy:** `#021b3b`
-- **Orange:** `#f36b21`
+- **Navy:** `#0A2240`
+- **Orange:** `#E84A27`
 - **Light background:** `#f5f5f7`
 
 ## Setup

@@ -176,8 +176,8 @@ export default function SolutionPage() {
             {/* Engine */}
             <div className="bg-orange/10 border-2 border-orange rounded-sm p-6 flex flex-col items-center justify-center text-center gap-4">
               <svg width="48" height="48" viewBox="0 0 100 100" fill="none">
-                <path d="M10 10 L50 85 L90 10 L72 10 L50 55 L28 10 Z" fill="#f36b21"/>
-                <path d="M32 10 L50 50 L68 10 Z" fill="#021b3b"/>
+                <path d="M10 10 L50 85 L90 10 L72 10 L50 55 L28 10 Z" fill="#E84A27"/>
+                <path d="M32 10 L50 50 L68 10 Z" fill="#0A2240"/>
               </svg>
               <h3 className="font-display font-black text-lg text-white uppercase">VSG Aggregation Engine</h3>
               <ul className="space-y-2 text-sm text-white/80">

@@ -74,7 +74,7 @@ export default function AboutPage() {
             <div className="relative">
               <div className="aspect-[4/5] bg-navy rounded-sm overflow-hidden border-4 border-orange/30">
                 <img
-                  src="https://via.placeholder.com/600x750/021b3b/f36b21?text=Michael+Villani"
+                  src="https://via.placeholder.com/600x750/0A2240/E84A27?text=Michael+Villani"
                   alt="Michael Villani, Founder of Villani Sports Group"
                   className="w-full h-full object-cover"
                 />

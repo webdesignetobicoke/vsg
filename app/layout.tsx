@@ -13,6 +13,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        {/* Google Analytics - Main Property */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-JTJ1GMJDCZ" />
+        <Script id="google-analytics-main">
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-JTJ1GMJDCZ');`}
+        </Script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* Google Tag Manager */}
@@ -23,21 +31,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-5ZR653T8');`}
         </Script>
-        {/* Google Analytics */}
+        {/* Google Analytics - Secondary Property */}
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-5JG2WE35WF" />
-        <Script id="google-analytics">
+        <Script id="google-analytics-secondary">
           {`window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-5JG2WE35WF');`}
-        </Script>
-        {/* Google Analytics - Additional */}
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-JTJ1GMJDCZ" />
-        <Script id="google-analytics-additional">
-          {`window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-JTJ1GMJDCZ');`}
         </Script>
       </head>
       <body className="antialiased">

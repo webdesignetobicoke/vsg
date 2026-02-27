@@ -39,6 +39,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           gtag('js', new Date());
           gtag('config', 'G-5JG2WE35WF');`}
         </Script>
+        {/* Google Analytics - Third Property */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-W6SK4TZ4C9" />
+        <Script id="google-analytics-tertiary">
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-W6SK4TZ4C9');`}
+        </Script>
       </head>
       <body className="antialiased">
         {/* Google Tag Manager (noscript) */}

@@ -38,7 +38,7 @@ export default function SponsorsPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative rink-bg pt-40 pb-24 hero-clip overflow-hidden">
+      <section className="relative rink-bg pt-52 md:pt-60 pb-24 hero-clip overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-1 orange-strip" />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="section-eyebrow">For Corporate Partners</div>

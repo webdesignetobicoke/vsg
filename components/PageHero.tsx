@@ -10,7 +10,7 @@ interface PageHeroProps {
 
 export default function PageHero({ eyebrow, title, subtitle, ctas, dark = true }: PageHeroProps) {
   return (
-    <section className={`relative pt-40 pb-24 ${dark ? 'rink-bg' : 'bg-navy'} hero-clip`}>
+    <section className={`relative pt-52 md:pt-60 pb-24 ${dark ? 'rink-bg' : 'bg-navy'} hero-clip`}>
       {/* Subtle grid overlay */}
       <div
         className="absolute inset-0 opacity-5"

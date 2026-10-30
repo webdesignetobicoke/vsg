@@ -3,11 +3,46 @@
 import Card from '@/components/Card';
 import CtaBanner from '@/components/CtaBanner';
 
+const stakeholders = [
+  {
+    title: 'For Sponsors',
+    subtitle: 'Structured market access',
+    benefits: [
+      'Single, governed access to large hockey audiences',
+      'One agreement replaces dozens of relationships',
+      'Category exclusivity across leagues',
+      'Consistent activation & reporting',
+      'Clear renewal pathways',
+    ],
+  },
+  {
+    title: 'For Leagues & Associations',
+    subtitle: 'Revenue without overhead',
+    benefits: [
+      'Access to regional & national sponsors',
+      'Predictable sponsorship revenue',
+      'Reduced internal resource burden',
+      'Centralized pricing & governance',
+      'Local identity preserved',
+    ],
+  },
+  {
+    title: 'For the Hockey Ecosystem',
+    subtitle: 'Sustainable investment',
+    benefits: [
+      'Sustainable investment in grassroots hockey',
+      'Reduced dependency on registration fees',
+      'Stronger corporate partnerships',
+      'Improved sponsor trust & execution',
+    ],
+  },
+];
+
 export default function MissionPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative rink-bg pt-40 pb-32 hero-clip overflow-hidden">
+      <section className="relative rink-bg pt-52 md:pt-60 pb-32 hero-clip overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-1 orange-strip" />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,6 +95,51 @@ export default function MissionPage() {
               size="lg"
             />
           </div>
+        </div>
+      </section>
+
+      {/* VALUE PROPOSITION */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="section-eyebrow">The Value Proposition</div>
+            <div className="accent-bar mx-auto" />
+            <h2 className="section-title mb-4">Value by Stakeholder</h2>
+            <p className="text-2xl font-display font-semibold text-navy mt-2 max-w-3xl mx-auto leading-snug">
+              VSG creates tangible value for every stakeholder in the hockey ecosystem — sponsors, leagues, associations, and the game itself.
+            </p>
+            <p className="text-gray-500 text-base max-w-3xl mx-auto mt-4 leading-relaxed">
+              Each audience receives distinct, measurable benefits designed into our platform.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+            {stakeholders.map((group, i) => (
+              <div key={group.title} className="flex flex-col bg-slate-custom border-t-4 border-orange shadow-md">
+                <div className="bg-navy px-8 py-8">
+                  <div className="font-display font-black text-5xl text-orange leading-none mb-4">
+                    {String(i + 1).padStart(2, '0')}
+                  </div>
+                  <h3 className="font-display font-bold text-2xl text-white uppercase tracking-tight leading-tight md:min-h-[4rem]">
+                    {group.title}
+                  </h3>
+                  <p className="text-orange text-sm font-semibold uppercase tracking-wider mt-3">{group.subtitle}</p>
+                </div>
+                <ul className="flex-grow px-8 py-8 space-y-4">
+                  {group.benefits.map((benefit) => (
+                    <li key={benefit} className="flex gap-3 items-start">
+                      <span className="text-orange font-bold text-lg leading-snug flex-shrink-0">›</span>
+                      <span className="text-gray-700 text-base leading-relaxed">{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-navy font-display font-black text-xl uppercase tracking-wide text-center mt-16">
+            Focused<span className="text-orange">.</span> Governed<span className="text-orange">.</span> Built to Scale<span className="text-orange">.</span>
+          </p>
         </div>
       </section>
 

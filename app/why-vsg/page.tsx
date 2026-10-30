@@ -8,7 +8,7 @@ export default function WhyVSGPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative rink-bg pt-40 pb-32 hero-clip overflow-hidden">
+      <section className="relative rink-bg pt-52 md:pt-60 pb-32 hero-clip overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-1 orange-strip" />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,7 +67,7 @@ export default function WhyVSGPage() {
       </section>
 
       {/* FOUNDER SECTION */}
-      <section className="py-24 bg-slate-custom">
+      <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="section-eyebrow">Leadership</div>
@@ -89,7 +89,7 @@ export default function WhyVSGPage() {
                 priority
               />
             </div>
-            <div className="bg-white p-10 md:p-16">
+            <div className="bg-slate-custom p-10 md:p-16">
               <div>
                 <h3 className="font-display font-bold text-3xl md:text-4xl text-navy mb-8">Michael Villani</h3>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">

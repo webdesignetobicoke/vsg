@@ -1,14 +1,18 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-const links = [
+import { MORNING_SKATE_LIVE } from '@/content/morningSkate';
+
+const allLinks = [
   { href: '/', label: 'Home' },
   { href: '/mission', label: 'Mission' },
   { href: '/what-we-do', label: 'What We Do' },
   { href: '/why-vsg', label: 'Why VSG' },
-  { href: '/value-proposition', label: 'Value Proposition' },
+  { href: '/morning-skate', label: 'Morning Skate' },
+  { href: '/news', label: 'Latest News' },
   { href: '/contact', label: 'Contact' },
 ];
+const links = allLinks.filter((l) => MORNING_SKATE_LIVE || l.href !== '/morning-skate');
 
 export default function Footer() {
   return (

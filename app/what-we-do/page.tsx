@@ -1,14 +1,22 @@
 // What We Do page
 
-import Card from '@/components/Card';
 import ServiceCard from '@/components/ServiceCard';
 import CtaBanner from '@/components/CtaBanner';
+
+const organizations = [
+  'Junior Hockey Leagues',
+  'Minor Hockey Associations',
+  'Girls Hockey Associations',
+  'Senior Hockey Leagues',
+  'Recreational Hockey Organizations',
+  'Hockey Academies',
+];
 
 export default function WhatWeDoPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative rink-bg pt-40 pb-32 hero-clip overflow-hidden">
+      <section className="relative rink-bg pt-52 md:pt-60 pb-32 hero-clip overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-1 orange-strip" />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,27 +49,23 @@ export default function WhatWeDoPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card
-              number="01"
-              title="Junior A Hockey Leagues"
-              description="We partner with Canadian Junior A leagues that operate multiple teams across defined regions and require a professional, centralized approach to sponsorship strategy and execution."
-              variant="navy"
-              size="lg"
-            />
-            <Card
-              number="02"
-              title="Large Minor Hockey Associations"
-              description="We work with well-run minor hockey associations that deliver high-frequency participation, strong family engagement, and meaningful community reach — but lack the scale to attract larger corporate partners independently."
-              variant="navy"
-              size="lg"
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {organizations.map((org) => (
+              <div
+                key={org}
+                className="flex items-center bg-white border-l-4 border-orange shadow-md px-8 py-8 min-h-[110px]"
+              >
+                <h3 className="font-display font-bold text-xl text-navy uppercase tracking-tight leading-tight">
+                  {org}
+                </h3>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* OUR SERVICE SUITE */}
-      <section className="py-24 bg-slate-custom">
+      <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="section-eyebrow">Our Capabilities</div>

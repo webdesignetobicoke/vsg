@@ -4,15 +4,31 @@ import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Kanit } from 'next/font/google';
 
-const navLinks = [
+const kanit = Kanit({ subsets: ['latin'], weight: ['800'], style: 'italic', display: 'swap' });
+
+// same metallic orange gradient as the "We skate," headline on the Morning Skate page
+const skateStyle: React.CSSProperties = {
+  backgroundImage: 'linear-gradient(180deg, #FF9A2E 0%, #F2601F 50%, #C9360F 100%)',
+  WebkitBackgroundClip: 'text',
+  backgroundClip: 'text',
+  WebkitTextFillColor: 'transparent',
+  filter: 'drop-shadow(0 2px 3px rgba(0,0,0,0.6))',
+};
+
+import { MORNING_SKATE_LIVE } from '@/content/morningSkate';
+
+const allLinks = [
   { href: '/', label: 'Home' },
   { href: '/mission', label: 'Mission' },
   { href: '/what-we-do', label: 'What We Do' },
-  { href: '/value-proposition', label: 'Value Proposition' },
   { href: '/why-vsg', label: 'Why VSG' },
   { href: '/contact', label: 'Contact' },
+  { href: '/news', label: 'Latest News' },
+  { href: '/morning-skate', label: 'Morning Skate' },
 ];
+const navLinks = allLinks.filter((l) => MORNING_SKATE_LIVE || l.href !== '/morning-skate');
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -53,7 +69,10 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  style={link.href === '/morning-skate' ? skateStyle : undefined}
                   className={`nav-link text-sm font-medium uppercase tracking-wider transition-all duration-150 pb-1 border-b-2 ${
+                    link.href === '/morning-skate' ? `${kanit.className} ` : ''
+                  }${
                     isActive
                       ? 'text-orange border-orange'
                       : 'text-white/80 hover:text-white border-transparent hover:border-orange'
@@ -94,7 +113,10 @@ export default function Navbar() {
                       key={link.href}
                       href={link.href}
                       onClick={() => setMenuOpen(false)}
+                      style={link.href === '/morning-skate' ? skateStyle : undefined}
                       className={`px-2 py-2.5 text-sm font-medium uppercase tracking-wider transition-colors border-l-4 pl-4 ${
+                        link.href === '/morning-skate' ? `${kanit.className} ` : ''
+                      }${
                         isActive
                           ? 'text-orange border-orange bg-white/5'
                           : 'text-white/80 hover:text-orange border-transparent'

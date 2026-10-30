@@ -54,8 +54,17 @@ const sponsorDemands = [
 export default function HomePage() {
   return (
     <>
+      {/* HERO + NEWS share one grid background so the angled hero edge blends into the news section */}
+      <div
+        style={{
+          backgroundColor: '#e8edf4',
+          backgroundImage:
+            'linear-gradient(rgba(7,28,64,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(7,28,64,0.07) 1px, transparent 1px)',
+          backgroundSize: '48px 48px',
+        }}
+      >
       {/* HERO */}
-      <section className="relative rink-bg pt-40 pb-32 hero-clip overflow-hidden">
+      <section className="relative rink-bg pt-52 md:pt-60 pb-32 hero-clip overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
@@ -125,6 +134,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      </div>
 
       {/* THE OPPORTUNITY */}
       <section className="py-24 bg-slate-custom">

@@ -1,30 +1,61 @@
 import { promises as fs } from 'fs';
 import path from 'path';
+import { get, put } from '@vercel/blob';
 import { newsItems as seedItems, type NewsItem } from '@/content/news';
+import seedJson from '@/data/news.json';
 
-// News posts created from /admin/news live in data/news.json.
-// Until the first post is saved, the seed list in content/news.ts is used.
-// Note: this writes to disk, so it needs a host with a persistent filesystem (not Vercel/Netlify serverless).
+// News posts created from /admin/news are stored as news.json.
+// - On Vercel (BLOB_READ_WRITE_TOKEN set): in a Vercel Blob store, so posts survive deploys and serverless restarts.
+// - Locally: in data/news.json on disk.
+// Until the first post is saved, the committed data/news.json is used as the starting list.
 
 const FILE = path.join(process.cwd(), 'data', 'news.json');
+const BLOB_NAME = 'news.json';
+
+export const useBlob = !!process.env.BLOB_READ_WRITE_TOKEN;
 
 export interface StoredNewsItem extends NewsItem {
   id: string;
 }
 
-export async function readNews(): Promise<StoredNewsItem[]> {
-  let items: StoredNewsItem[];
+function seed(): StoredNewsItem[] {
+  const items = (seedJson as StoredNewsItem[]).length
+    ? (seedJson as StoredNewsItem[])
+    : seedItems.map((it, i) => ({ ...it, id: `seed-${i}` }));
+  return [...items];
+}
+
+async function load(): Promise<StoredNewsItem[]> {
   try {
-    items = JSON.parse(await fs.readFile(FILE, 'utf8'));
+    if (useBlob) {
+      const result = await get(BLOB_NAME, { access: 'public', useCache: false });
+      if (!result || result.statusCode !== 200) return seed();
+      return JSON.parse(await new Response(result.stream).text());
+    }
+    return JSON.parse(await fs.readFile(FILE, 'utf8'));
   } catch {
-    items = seedItems.map((it, i) => ({ ...it, id: `seed-${i}` }));
+    return seed();
   }
-  return items.sort((a, b) => b.date.localeCompare(a.date));
+}
+
+export async function readNews(): Promise<StoredNewsItem[]> {
+  return (await load()).sort((a, b) => b.date.localeCompare(a.date));
 }
 
 export async function writeNews(items: StoredNewsItem[]) {
+  const json = JSON.stringify(items, null, 2);
+  if (useBlob) {
+    await put(BLOB_NAME, json, {
+      access: 'public',
+      addRandomSuffix: false,
+      allowOverwrite: true,
+      contentType: 'application/json',
+      cacheControlMaxAge: 60,
+    });
+    return;
+  }
   await fs.mkdir(path.dirname(FILE), { recursive: true });
-  await fs.writeFile(FILE, JSON.stringify(items, null, 2));
+  await fs.writeFile(FILE, json);
 }
 
 export function slugify(title: string) {
@@ -58,7 +89,7 @@ export function parseNewsInput(body: unknown): { item?: NewsItem; error?: string
   const href = str('href');
   if (href && !/^(https?:\/\/|\/)/.test(href)) return { error: 'Link must start with http(s):// or /.' };
   const image = str('image');
-  if (image && !image.startsWith('/')) return { error: 'Image must be a path starting with /.' };
+  if (image && !/^(\/|https:\/\/)/.test(image)) return { error: 'Image must be a path starting with / or an https:// link.' };
   const item: NewsItem = { date, title };
   if (str('summary')) item.summary = str('summary');
   if (str('source')) item.source = str('source');

@@ -44,8 +44,8 @@ export function withLinks(items: StoredNewsItem[]): StoredNewsItem[] {
 }
 
 export function isAuthorized(request: Request) {
-  const expected = process.env.ADMIN_PASSWORD;
-  return !!expected && request.headers.get('x-admin-password') === expected;
+  const expected = process.env.ADMIN_PASSWORD?.trim();
+  return !!expected && request.headers.get('x-admin-password')?.trim() === expected;
 }
 
 // Strips fields down to what NewsItem allows; returns an error string if invalid.

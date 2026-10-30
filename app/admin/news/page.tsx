@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 interface Post {
   id: string;
@@ -19,13 +19,13 @@ const input = 'w-full border border-gray-300 px-3 py-2.5 text-base text-navy bg-
 const label = 'block text-xs font-bold uppercase tracking-wider text-navy mb-1';
 
 export default function NewsAdminPage() {
-  const [password, setPassword] = useState('');
+  const passwordRef = useRef<HTMLInputElement>(null);
   const [posts, setPosts] = useState<Post[]>([]);
   const [form, setForm] = useState(blank());
   const [editingId, setEditingId] = useState<string | null>(null);
   const [message, setMessage] = useState('');
 
-  const headers = useCallback(() => ({ 'x-admin-password': password }), [password]);
+  const headers = useCallback(() => ({ 'x-admin-password': (passwordRef.current?.value ?? '').trim() }), []);
 
   const load = useCallback(async () => {
     setPosts(await (await fetch('/api/news', { cache: 'no-store' })).json());
@@ -34,7 +34,7 @@ export default function NewsAdminPage() {
   useEffect(() => {
     try {
       const saved = sessionStorage.getItem('vsg-admin-pw');
-      if (saved) setPassword(saved);
+      if (saved && passwordRef.current && !passwordRef.current.value) passwordRef.current.value = saved;
     } catch {}
     load();
   }, [load]);
@@ -52,10 +52,10 @@ export default function NewsAdminPage() {
     });
     const data = await res.json().catch(() => ({}));
     if (!res.ok) {
-      return setMessage(data.error || 'Could not save.');
+      return setMessage(res.status === 401 ? 'Wrong admin password (or ADMIN_PASSWORD is not set on the server).' : data.error || 'Could not save.');
     }
     try {
-      sessionStorage.setItem('vsg-admin-pw', password);
+      sessionStorage.setItem('vsg-admin-pw', passwordRef.current?.value.trim() ?? '');
     } catch {}
     setMessage(editingId ? 'Post updated.' : 'Post published.');
     setForm(blank());
@@ -70,7 +70,7 @@ export default function NewsAdminPage() {
     body.append('file', file);
     const res = await fetch('/api/news/upload', { method: 'POST', headers: headers(), body });
     const data = await res.json().catch(() => ({}));
-    if (!res.ok) return setMessage(data.error || 'Upload failed.');
+    if (!res.ok) return setMessage(res.status === 401 ? 'Wrong admin password.' : data.error || 'Upload failed.');
     setForm((f) => ({ ...f, image: data.path }));
     setMessage('Image uploaded.');
   }
@@ -125,7 +125,7 @@ export default function NewsAdminPage() {
       <form onSubmit={save} className="bg-white border-t-4 border-orange shadow-md p-6 sm:p-10 space-y-5 mb-16">
         <div>
           <label className={label}>Admin password</label>
-          <input type="password" className={input} value={password} onChange={(e) => setPassword(e.target.value)} required />
+          <input ref={passwordRef} type="password" autoComplete="current-password" className={input} required />
         </div>
         <div className="grid sm:grid-cols-2 gap-4">
           <div>
